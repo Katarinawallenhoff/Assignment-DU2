@@ -17,6 +17,8 @@ function showCity() {
     if (currentCity) {
         h2Element.textContent = currentCity.name + " (" + currentCity.country + ")";
         document.title = currentCity.name;
+        highlightCity();
+        findClosestAndFurthest();
     } else {
         h2Element.textContent = userInput + " finns inte i databasen.";
         document.title = "not found";
