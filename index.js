@@ -111,6 +111,25 @@ function showCity() {
 
 
 
+ function displayDistances() {
+    let closestBox = divContainer.querySelector(".closest");
+    let furthestBox = divContainer.querySelector(".furthest");
+ 
+ 
+    if (closestBox) {
+        let closestCityName = findCityById(closestCity);
+        closestBox.textContent = closestCityName + " ligger " + (closestDistance / 10).toFixed(0) + " mil bort";
+    }
+ 
+ 
+    if (furthestBox) {
+        let furthestCityName = findCityById(furthestCity);
+        furthestBox.textContent = furthestCityName + " ligger " + (furthestDistance / 10).toFixed(0) + " mil bort";
+    }
+ }
+ 
+
+
  
  
  
