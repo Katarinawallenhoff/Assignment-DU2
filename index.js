@@ -87,6 +87,30 @@ function showCity() {
         updateDistanceText();
     }
  }
+
+
+ function markCities() {
+    let allCityBoxes = divContainer.getElementsByClassName("cityBox");
+    for (let i = 0; i < allCityBoxes.length; i++) {
+        let cityBox = allCityBoxes[i];
+        let city = findCity(cityBox.textContent);
+ 
+ 
+        cityBox.classList.remove("closest", "furthest");
+ 
+ 
+        if (city && closestCity && city.id === closestCity) {
+            cityBox.classList.add("closest");
+        }
+        if (city && furthestCity && city.id === furthestCity) {
+            cityBox.classList.add("furthest");
+        }
+    }
+ }
+
+
+
+
  
  
  
