@@ -12,8 +12,6 @@ let closestDistance = 100000;
 let furthestDistance = 0;
 
 
-
-
 function showCity() {
    currentCity = findCity(userInput);
 
@@ -26,6 +24,10 @@ function showCity() {
    } else {
        h2Element.textContent = userInput + " finns inte i databasen.";
        document.title = "not found";
+       let h3Element = document.querySelector("h3");
+       if(h3Element){
+        h3Element.style.display = "none";
+       }
    }
 }
 
@@ -38,8 +40,6 @@ function findCity(cityName) {
    }
    return undefined;
 }
-
-
 
 
 function highlightCity() {
@@ -175,8 +175,6 @@ function createCityBoxes() {
 }
 
 
-
-
 function displayCityDistances() {
    let container = document.getElementById("table");
    let headerRow = "<div class='cell'></div>";
@@ -217,9 +215,6 @@ function findDistance(city1Id, city2Id) {
    }
    return undefined;
 }
-
-
-
 
 createCityBoxes();
 showCity();
