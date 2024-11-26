@@ -11,11 +11,8 @@ let furthestCity = 0;
 let closestDistance = 100000;
 let furthestDistance = 0;
 
-
 function showCity() {
    currentCity = findCity(userInput);
-
-
    if (currentCity) {
        h2Element.textContent = currentCity.name + " (" + currentCity.country + ")";
        document.title = currentCity.name;
@@ -30,7 +27,6 @@ function showCity() {
        }
    }
 }
-
 
 function findCity(cityName) {
    for (let i = 0; i < cities.length; i++) {
@@ -55,7 +51,6 @@ function highlightCity() {
        }
    }
 }
-
 
 function findClosestAndFurthest() {
    for (let i = 0; i < distances.length; i++) {
@@ -109,9 +104,6 @@ function markCities() {
    }
 }
 
-
-
-
 function displayDistances() {
    let closestBox = divContainer.querySelector(".closest");
    let furthestBox = divContainer.querySelector(".furthest");
@@ -130,8 +122,6 @@ function displayDistances() {
 }
 
 
-
-
 function findCityById(cityId) {
    for (let i = 0; i < cities.length; i++) {
        if (cities[i].id === cityId) {
@@ -140,9 +130,6 @@ function findCityById(cityId) {
    }
    return "";
 }
-
-
-
 
 function updateDistanceText() {
    let closestSpan = document.getElementById("closest");
@@ -160,9 +147,6 @@ function updateDistanceText() {
        furthestSpan.textContent = furthestCityName;
    }
 }
-
-
-
 
 function createCityBoxes() {
    for (let i = 0; i < cities.length; i++) {
@@ -202,8 +186,6 @@ function displayCityDistances() {
         container.innerHTML += row;
     }
  }
- 
- 
  
  
  function findDistance(city1Id, city2Id) {
