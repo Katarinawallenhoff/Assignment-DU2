@@ -127,6 +127,16 @@ function showCity() {
         furthestBox.textContent = furthestCityName + " ligger " + (furthestDistance / 10).toFixed(0) + " mil bort";
     }
  }
+
+ function findCityById(cityId) {
+    for (let i = 0; i < cities.length; i++) {
+        if (cities[i].id === cityId) {
+            return cities[i].name;
+        }
+    }
+    return "";
+ }
+ 
  
 
 
