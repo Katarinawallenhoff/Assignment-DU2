@@ -128,6 +128,9 @@ function showCity() {
     }
  }
 
+
+
+
  function findCityById(cityId) {
     for (let i = 0; i < cities.length; i++) {
         if (cities[i].id === cityId) {
@@ -137,6 +140,29 @@ function showCity() {
     return "";
  }
  
+
+
+
+ function updateDistanceText() {
+    let closestSpan = document.getElementById("closest");
+    let furthestSpan = document.getElementById("furthest");
+ 
+ 
+    let closestCityName = findCityById(closestCity);
+    let furthestCityName = findCityById(furthestCity);
+ 
+ 
+    if (closestSpan) {
+        closestSpan.textContent = closestCityName;
+    }
+    if (furthestSpan) {
+        furthestSpan.textContent = furthestCityName;
+    }
+ }
+ 
+
+
+
  
 
 
