@@ -53,5 +53,35 @@ function showCity() {
         }
     }
  }
+
+
+
+ function findClosestAndFurthest() {
+    for (let i = 0; i < distances.length; i++) {
+        let currentDistance = distances[i];
+ 
+ 
+        if (currentCity && currentDistance.city1 === currentCity.id) {
+            if (currentDistance.distance < closestDistance) {
+                closestDistance = currentDistance.distance;
+                closestCity = currentDistance.city2;
+            }
+            if (currentDistance.distance > furthestDistance) {
+                furthestDistance = currentDistance.distance;
+                furthestCity = currentDistance.city2;
+            }
+        } else if (currentCity && currentDistance.city2 === currentCity.id) {
+            if (currentDistance.distance < closestDistance) {
+                closestDistance = currentDistance.distance;
+                closestCity = currentDistance.city1;
+            }
+            if (currentDistance.distance > furthestDistance) {
+                furthestDistance = currentDistance.distance;
+                furthestCity = currentDistance.city1;
+            }
+        }
+    }
+ }
+ 
  
  
