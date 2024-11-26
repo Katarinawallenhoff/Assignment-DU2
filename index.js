@@ -38,4 +38,20 @@ function showCity() {
     }
     return undefined;
  }
+
+
+ function highlightCity() {
+    let allCityBoxes = divContainer.getElementsByClassName("cityBox");
+    for (let i = 0; i < allCityBoxes.length; i++) {
+        let cityBox = allCityBoxes[i];
+        let city = findCity(cityBox.textContent);
+       
+        if (city && currentCity && city.id === currentCity.id) {
+            cityBox.classList.add("target");
+        } else {
+            cityBox.classList.remove("target");
+        }
+    }
+ }
+ 
  
