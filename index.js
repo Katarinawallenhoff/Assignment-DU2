@@ -80,6 +80,11 @@ function showCity() {
                 furthestCity = currentDistance.city1;
             }
         }
+
+
+        markCities();
+        displayDistances();
+        updateDistanceText();
     }
  }
  
