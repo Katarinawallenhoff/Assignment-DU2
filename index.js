@@ -161,6 +161,18 @@ function showCity() {
  }
  
 
+ function createCityBoxes() {
+    for (let i = 0; i < cities.length; i++) {
+        let city = cities[i];
+        let newDiv = document.createElement("div");
+        newDiv.textContent = city.name;
+        newDiv.classList.add("cityBox");
+        divContainer.appendChild(newDiv);
+    }
+}
+
+createCityBoxes();
+
 
 
  
