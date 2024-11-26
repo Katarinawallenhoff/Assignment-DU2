@@ -176,45 +176,45 @@ function createCityBoxes() {
 
 
 function displayCityDistances() {
-   let container = document.getElementById("table");
-   let headerRow = "<div class='cell'></div>";
-   for (let i = 0; i < cities.length; i++) {
-       headerRow += "<div class='cell head_column'>" + i + "</div>";
-   }
-
-
-   container.innerHTML = headerRow;
-   for (let i = 0; i < cities.length; i++) {
-       let city = cities[i];
-       let row = "<div class='cell head_row'>" + city.id + " - " + city.name + "</div>";
-
-
-       for (let j = 0; j < cities.length; j++) {
-           let otherCity = cities[j];
-           let dist = findDistance(city.id, otherCity.id);
-
-
-           let cellClass = (i % 2 === 0 ? 'even_row' : '') + ' ' + (j % 2 === 0 ? 'even_col' : '');
-           row += "<div class='cell " + cellClass + "'>" + (dist ? (dist / 10).toFixed(0) : "") + "</div>";
-       }
-
-
-       container.innerHTML += row;
-   }
-}
-
-
-
-
-function findDistance(city1Id, city2Id) {
-   for (let i = 0; i < distances.length; i++) {
-       if ((distances[i].city1 === city1Id && distances[i].city2 === city2Id) ||
-           (distances[i].city1 === city2Id && distances[i].city2 === city1Id)) {
-           return distances[i].distance;
-       }
-   }
-   return undefined;
-}
+    let container = document.getElementById("table");
+    let headerRow = "<div class='cell'></div>";
+    for (let i = 0; i < cities.length; i++) {
+        headerRow += "<div class='cell head_column'>" + i + "</div>";
+    }
+ 
+ 
+    container.innerHTML = headerRow;
+    for (let i = 0; i < cities.length; i++) {
+        let city = cities[i];
+        let row = "<div class='cell head_row'>" + city.id + " - " + city.name + "</div>";
+ 
+ 
+        for (let j = 0; j < cities.length; j++) {
+            let otherCity = cities[j];
+            let dist = findDistance(city.id, otherCity.id);
+ 
+ 
+            let cellClass = (i % 2 === 0 ? 'even_row' : '') + ' ' + (j % 2 === 0 ? 'even_col' : '');
+            row += "<div class='cell " + cellClass + "'>" + (dist ? (dist / 10).toFixed(0) : "") + "</div>";
+        }
+ 
+ 
+        container.innerHTML += row;
+    }
+ }
+ 
+ 
+ 
+ 
+ function findDistance(city1Id, city2Id) {
+    for (let i = 0; i < distances.length; i++) {
+        if ((distances[i].city1 === city1Id && distances[i].city2 === city2Id) ||
+            (distances[i].city1 === city2Id && distances[i].city2 === city1Id)) {
+            return distances[i].distance;
+        }
+    }
+    return undefined;
+ }
 
 createCityBoxes();
 showCity();
