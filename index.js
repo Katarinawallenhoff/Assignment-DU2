@@ -6,6 +6,10 @@ let divContainer = document.getElementById("cities");
 let userInput = prompt("Skriv in en stad");
 let h2Element = document.querySelector("h2");
 let currentCity = 0;
+let closestCity = 0;
+let furthestCity = 0;
+let closestDistance = 100000;
+let furthestDistance = 0;
 
 //Start of all functions
 
