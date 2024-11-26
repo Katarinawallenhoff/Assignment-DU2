@@ -23,3 +23,13 @@ function showCity() {
     }
  }
  
+
+ function findCity(cityName) {
+    for (let i = 0; i < cities.length; i++) {
+        if (cities[i].name.toLowerCase() === cityName.toLowerCase()) {
+            return cities[i];
+        }
+    }
+    return undefined;
+ }
+ 
